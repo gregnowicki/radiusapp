@@ -1,3 +1,3 @@
 == RadiusApp
 
-Welcome to the RadiusApp github page. This is a prject by Greg Nowicki.
+Welcome to the RadiusApp github page. This is a project by Greg Nowicki.
