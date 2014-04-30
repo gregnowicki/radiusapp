@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/welcome'
+
   resources :contacts
 
   #devise_for :users
