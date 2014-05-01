@@ -8,4 +8,3 @@ class User < ActiveRecord::Base
 end
 
 
-#add has_many statement

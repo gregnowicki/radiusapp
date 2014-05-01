@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
   # GET /contacts/1
@@ -24,7 +24,7 @@ class ContactsController < ApplicationController
   # POST /contacts
   # POST /contacts.json
   def create
-    @contact = Contact.new(contact_params)
+    @contact = Contact.new(contact_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @contact.save

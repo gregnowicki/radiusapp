@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
 
+<body>
+<div id="wrap">
+<div class="row">
 <div class="navbar navbar-default">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -42,11 +44,25 @@
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}", :class => 'login_flash alert alert-dismissable alert-info' %>
   <% end %>
-
-<!--   <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> -->
-
-<%= yield %>
-
+</div>
+<div class="row">
+  <% if user_signed_in? %>
+  <div class="col-xs-pull-7">
+    <%= render "/layouts/sidebar" %>
+  </div>
+  <% end %>
+  <div class="col-lg-6">
+    <%= yield %>
+  </div>
+</div>
+</div>
+<div class="row">
+  <div id="push"></div>
+    </div>
+  <div id="footer">
+    <div class="container">
+    </div>
+  </div>
+</div>
 </body>
 </html>
