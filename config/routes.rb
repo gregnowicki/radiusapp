@@ -7,7 +7,14 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root :to => 'welcome#index'
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'contacts#index', as: :authenticated_root
+    end
+    unauthenticated :user do
+      root :to => 'welcome#index'
+    end
+  end
 
   # You can have the root of your site routed with "root"
 

@@ -24,5 +24,21 @@
   <%= @contact.notes %>
 </p>
 
+<p>
+<strong>Goals:</strong>
+<table>
+<tbody>
+<% @contact.goals.each do |goal| %>
+        <tr>
+          <td><%= goal.title %></td>
+          #contact.goal.events
+        </tr>
+      <% end %>
+</tbody>
+</table>
+</p>
+
+
+
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
