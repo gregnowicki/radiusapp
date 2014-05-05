@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.0'
+gem 'bootstrap-sass', '~> 3.1.1'
+#added sprockets gem to fix issue - done in hartl tutorial
+gem 'sprockets', '2.11.0'
 
 group :development do
   gem 'sqlite3'
@@ -22,6 +25,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'orm_adapter', '~> 0.5.0'
-gem 'bootstrap-sass', '~> 3.1.1'
+
 gem 'bootswatch-rails'
 # gem 'therubyracer',  platforms: :ruby

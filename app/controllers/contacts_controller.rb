@@ -15,6 +15,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    1.times { @contact.goals.build }
   end
 
   # GET /contacts/1/edit
@@ -25,7 +26,6 @@ class ContactsController < ApplicationController
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params.merge(user_id: current_user.id))
-
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
@@ -69,6 +69,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :title, :company, :email, :notes)
+      params.require(:contact).permit(:name, :title, :company, :email, :notes, goals_attributes: [:title, :due_date, :notes, :contact_id])
     end
 end
