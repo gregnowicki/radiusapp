@@ -20,6 +20,9 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1/edit
   def edit
+    if @contact.goals.empty?
+      @contact.goals.build
+    end
   end
 
   # POST /contacts
@@ -69,6 +72,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :title, :company, :email, :notes, goals_attributes: [:title, :due_date, :notes, :contact_id])
+      params.require(:contact).permit(:name, :title, :company, :email, :notes, goals_attributes: [:title, :due_date, :notes, :contact_id, :_destroy, :id])
     end
 end
