@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'orm_adapter', '~> 0.5.0'
+gem 'simple_form'
 
 gem 'bootswatch-rails'
 # gem 'therubyracer',  platforms: :ruby
