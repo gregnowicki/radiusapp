@@ -9,6 +9,7 @@ gem 'sprockets', '2.11.0'
 
 group :development do
   gem 'sqlite3'
+  gem 'quiet_assets'
   gem 'annotate'
 end
 
