@@ -2,7 +2,6 @@
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
       <ul>
       <% @contact.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,46 +10,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :company %><br>
-    <%= f.text_field :company %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.email_field(:email) %>
-  </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
-  </div>
+    <%= f.input :name %>
+    <%= f.input :title %>
+    <%= f.input :company %>
+    <%= f.input :email %>
+    <%= f.input :notes %>
+
   <h3>Goals:</h3>
-    <%= f.fields_for(:goals) do |fa| %>
-      <div class="field">
-        <%= fa.label :title %>
-        <%= fa.text_field :title %>
-      </div>
-      <div class="field">
-        <%= fa.label :due_date %>
-        <%= fa.date_field :due_date %>
-      </div>
-      <div class="field">
-        <%= fa.label :notes %>
-        <%= fa.text_area :notes %>
-      </div>
-      <div>
-        <%= fa.label :delete_goal %>
-        <%= fa.check_box '_destroy' %>
-      </div>
-    <% end %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.simple_fields_for(:goals) do |goal| %>
+
+    <%= render 'goal_fields', :f => goal %>
+    <%= link_to_add_association 'add goal', f, :goals %>
+    <%= f.submit :submit %>
+  <% end %>
 <% end %>
+
