@@ -1,4 +1,5 @@
 <%= simple_form_for(@contact) do |f| %>
+
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -10,18 +11,22 @@
     </div>
   <% end %>
 
-    <%= f.input :name %>
-    <%= f.input :title %>
-    <%= f.input :company %>
-    <%= f.input :email %>
-    <%= f.input :notes %>
+  <%= f.input :name %>
+  <%= f.input :title %>
+  <%= f.input :company %>
+  <%= f.input :email %>
+  <%= f.input :notes %>
 
   <h3>Goals:</h3>
+  <div id="goals">
     <%= f.simple_fields_for(:goals) do |goal| %>
-
     <%= render 'goal_fields', :f => goal %>
-    <%= link_to_add_association 'add goal', f, :goals %>
-    <%= f.submit :submit %>
-  <% end %>
-<% end %>
+    <div class="links">
+      <%= link_to_add_association 'add goal', f, :goals %>
+    </div>
+  </div>
 
+  <%= f.submit :submit %>
+  <% end %>
+
+<% end %>
