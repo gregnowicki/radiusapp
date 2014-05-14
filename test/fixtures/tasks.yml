@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact_id: 1
+  date_of_task: 2014-05-13 20:49:28
+  type: 
+  complete: false
+
+two:
+  contact_id: 1
+  date_of_task: 2014-05-13 20:49:28
+  type: 
+  complete: false

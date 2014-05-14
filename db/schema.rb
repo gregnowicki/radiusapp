@@ -1,4 +1,4 @@
- #encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140501011343) do
+ActiveRecord::Schema.define(version: 20140514004928) do
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20140501011343) do
   end
 
   add_index "goals", ["contact_id"], name: "index_goals_on_contact_id"
+
+  create_table "tasks", force: true do |t|
+    t.integer  "contact_id"
+    t.datetime "date_of_task"
+    t.string   "type"
+    t.boolean  "complete"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
