@@ -9,6 +9,26 @@ gem 'sprockets', '2.11.0'
 
 group :development do
   gem 'sqlite3'
+  gem 'quiet_assets'
+  gem 'annotate'
+  gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'factory_girl_rails'
+end
+
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
 
 group :production do
@@ -23,7 +43,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 gem 'orm_adapter', '~> 0.5.0'
 gem 'simple_form'
 gem 'cocoon'

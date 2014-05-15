@@ -1,0 +1,92 @@
+app_notes.txt
+
+get the app working
+  
+  # pg install issue
+    gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+
+# install bin stubs for spring
+  https://github.com/rails/spring
+  bundle exec spring binstub --all  
+
+# quiet_assets
+#annotate
+  # should have done annotate bottom
+
+#faker for seeds
+  https://github.com/stympy/faker
+
+# dependent: :destroy for user to contacts
+
+# root_path for logo/title
+
+# better_errors gem
+https://github.com/charliesome/better_errors
+
+# scoped the contacts_controller#set_contact
+to the current_user
+
+looking stuff up by just id is not good
+for security reasons
+
+# would be nice to be able to login as an admin and take over the user
+
+  https://github.com/plataformatec/devise/wiki/How-To:-Sign-in-as-another-user-if-you-are-an-admin
+
+  make it possible to switch users easily, but remembering that you are an admin
+
+  http://pivotallabs.com/fast-user-switching-with-devise/
+
+
+
+a gem for user switching, like hobo has
+  https://github.com/flyerhzm/switch_user
+
+  demo of it
+    http://switch-user-example.heroku.com/
+
+
+# rspec setup
+  
+  https://semaphoreapp.com/blog/2013/08/14/setting-up-bdd-stack-on-a-new-rails-4-application.html
+
+  rails generate rspec:install
+
+  bundle binstubs rspec-core
+  # good docs on rspec
+  https://www.relishapp.com/rspec/rspec-rails/docs
+  
+  rails generate rspec:model user &&  rails generate rspec:model contact && rails generate rspec:model goal
+
+  rails generate rspec:controller contacts
+  rails generate rspec:scaffold Post title:string body:text
+
+rails generate rspec:scaffold contact name title company email notes:text user:references
+
+https://github.com/RailsApps/rails-devise/tree/master/spec/features/users
+
+https://github.com/plataformatec/devise/wiki/How-To:-Controllers-tests-with-Rails-3-(and-rspec)
+
+working specs
+  rspec spec/routing/
+  rspec spec/views
+
+# shoulda-matchers
+  https://github.com/thoughtbot/shoulda-matchers
+
+still not happy with
+  devise login
+  stubbing associations
+
+
+
+
+
+
+
+
+
+
+
+
+
