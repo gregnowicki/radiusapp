@@ -28,5 +28,9 @@ gem 'orm_adapter', '~> 0.5.0'
 gem 'simple_form'
 gem 'cocoon'
 
+#these two gems are for debugging and errors
+gem 'better_errors'
+gem "binding_of_caller"
+
 gem 'bootswatch-rails'
 # gem 'therubyracer',  platforms: :ruby

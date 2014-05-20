@@ -15,14 +15,20 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
-    1.times { @contact.goals.build }
+    1.times do
+      goal = @contact.goals.build
+      goal.tasks.build
+    end
   end
 
   # GET /contacts/1/edit
   def edit
-    if @contact.goals.empty?
-      @contact.goals.build
-    end
+    # goal = @contact.goals.first
+    # if @contact.goals.empty?
+    #   @contact.goals.build
+    # elsif goal.tasks.empty?
+    #   goal.tasks.build
+    # end
   end
 
   # POST /contacts
@@ -72,6 +78,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :title, :company, :email, :notes, goals_attributes: [:title, :due_date, :notes, :contact_id, :_destroy, :id, tasks_attributes: [:type, :date_of_task, :complete, :goal_id]])
+      params.require(:contact).permit(:name, :title, :company, :email, :notes, goals_attributes: [:title, :due_date, :notes, :contact_id, :_destroy, :id, tasks_attributes: [:task_type, :date_of_task, :complete, :goal_id, :_destroy, :id]])
     end
 end

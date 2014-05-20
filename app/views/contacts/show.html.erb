@@ -30,13 +30,16 @@
 <tbody>
 <% @contact.goals.each do |goal| %>
         <tr>
-          <td><%= goal.title %></td>
-          <!-- contact.goal.events -->
+          <td><%= goal.title %> (Tasks: "<%= goal.tasks.size %>")</td>
         </tr>
       <% end %>
 </tbody>
 </table>
 </p>
+
+
+<!-- RESTRUCTURE ABOCE TABLE IN ORDER TO DISPLAY TASKS UNDER RESPECTIVE GOAL. THE BELOW CODE TO RETREIVE TASK IS CORRECT, YOU DO NOT USE @ BECAUSE THE DATA IS NOT PASSED BY THE CONTROLLER, IT IS A LIST THAT RESIDES WITHIN GOAL -->
+
 
 
 
