@@ -23,12 +23,7 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1/edit
   def edit
-    # goal = @contact.goals.first
-    # if @contact.goals.empty?
-    #   @contact.goals.build
-    # elsif goal.tasks.empty?
-    #   goal.tasks.build
-    # end
+
   end
 
   # POST /contacts
