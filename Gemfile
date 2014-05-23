@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-
-
 gem 'rails', '4.1.0'
 gem 'bootstrap-sass', '~> 3.1.1'
 #added sprockets gem to fix issue - done in hartl tutorial
@@ -26,6 +24,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'orm_adapter', '~> 0.5.0'
 gem 'simple_form'
+
+#this is for nexted forms
 gem 'cocoon'
 
 #these two gems are for debugging and errors
