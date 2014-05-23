@@ -21,12 +21,12 @@
   <div id="goals">
     <%= f.simple_fields_for(:goals) do |goal| %>
     <%= render 'goal_fields', :f => goal %>
-    <div class="links">
-      <%= link_to_add_association 'add goal', f, :goals %>
-    </div>
+      <div class="links">
+        <%= link_to_add_association 'add goal', f, :goals, :render_options => {:wrapper => 'bootstrap' } %>
+      </div>
+    <% end %>
   </div>
 
   <%= f.submit :submit %>
-  <% end %>
 
 <% end %>

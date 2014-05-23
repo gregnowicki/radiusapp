@@ -1,0 +1,9 @@
+<div class="nested-fields">
+
+  <%= f.input :task_type %>
+  <%= f.input :date_of_task %>
+  <%= f.input :complete, as: :boolean, checked_value: true, unchecked_value: false %>
+
+  <%= link_to_remove_association "remove task", f %>
+
+</div>

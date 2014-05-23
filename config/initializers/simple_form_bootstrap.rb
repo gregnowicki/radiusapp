@@ -37,6 +37,26 @@ SimpleForm.setup do |config|
     end
   end
 
+  config.wrappers :inline, :class => 'clearfix', :error_class => :error do |b|
+    b.use :placeholder
+    b.use :label
+    b.use :tag => 'div', :class => 'input' do |ba|
+      ba.use :input
+      ba.use :error, :tag => :span, :class => :'help-inline'
+      ba.use :hint,  :tag => :span, :class => :'help-block'
+    end
+  end
+
+   config.wrappers :stacked, :class => "clearfix", :error_class => :error do |b|
+    b.use :placeholder
+    b.use :label
+    b.use :hint,  :tag => :span, :class => :'help-block'
+    b.use :tag => 'div', :class => 'input' do |input|
+      input.use :input
+      input.use :error, :tag => :span, :class => :'help-inline'
+    end
+  end
+
   # Wrappers for forms and inputs using the Twitter Bootstrap toolkit.
   # Check the Bootstrap docs (http://twitter.github.com/bootstrap)
   # to learn about the different styles for forms and inputs,
