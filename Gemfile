@@ -5,6 +5,14 @@ gem 'bootstrap-sass', '~> 3.1.1'
 #added sprockets gem to fix issue - done in hartl tutorial
 gem 'sprockets', '2.11.0'
 
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+end
+
 group :development do
   gem 'sqlite3'
   gem 'quiet_assets'
@@ -18,15 +26,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
   gem 'factory_girl_rails'
-end
-
-
-group :test do
-  gem 'shoulda-matchers'
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'launchy'
-  gem 'selenium-webdriver'
 end
 
 group :production do
@@ -43,12 +42,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'orm_adapter', '~> 0.5.0'
 gem 'simple_form'
+gem 'rails_12factor'
 
 #this is for nexted forms
 gem 'cocoon'
 
-#these two gems are for debugging and errors
-gem 'better_errors'
+#this gem is for debugging and errors
 gem "binding_of_caller"
 
 gem 'bootswatch-rails'
