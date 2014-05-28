@@ -47,8 +47,5 @@ gem 'rails_12factor'
 #this is for nexted forms
 gem 'cocoon'
 
-#this gem is for debugging and errors
-gem "binding_of_caller"
-
 gem 'bootswatch-rails'
 # gem 'therubyracer',  platforms: :ruby
